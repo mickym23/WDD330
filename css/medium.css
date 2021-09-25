@@ -17,6 +17,10 @@
       max-width: 15%;
    }
 
+   .headings {
+      padding-right: 0%;
+   }
+
    nav ul li a, nav ul li a:visited {
 
       text-align: center;
