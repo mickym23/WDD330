@@ -1,4 +1,11 @@
+@media only screen and (min-width: 1000px) {
+   html {
+      margin: 0 auto;
+      width: 100%;
+   }
 
-@media only screen and (min-width: 900px) {
-   
+   header img {
+      max-width: 10%;
+   }
+
 }
