@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 *, html, body {
 
    margin: 0 auto;
@@ -21,7 +21,7 @@ header h2 {
 
 .headings {
    color: white;
-   font-family: "Permanent Marker", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-family: "Monoton", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    letter-spacing: 2.5px;
    padding-top: 2%;
    padding-right: 10%;
