@@ -18,6 +18,7 @@ let ol = document.getElementById("indexOL");
       let a = document.createElement('a');
       a.innerHTML = link.label;
       a.setAttribute('href',link.url);
+      a.setAttribute('target', '_blank');
       li.appendChild(a);
       ol.appendChild(li);
 
