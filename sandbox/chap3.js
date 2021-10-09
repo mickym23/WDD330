@@ -1,12 +1,17 @@
-// Chapter 3.1 Functions (Minimum)
-const min = (arg1, arg2) => {
-	return Math.min(arg1, arg2);
-}
 
-console.log(min(0, 10));
-// → 0
-console.log(min(0, -10));
-// → -10
+
+
+// Chapter 3.1 Functions (Minimum)
+const minNums = () => {
+	const min = (arg1, arg2) => {
+		return Math.min(arg1, arg2);
+	}
+
+	console.log(min(0, 10));
+	// → 0
+	console.log(min(0, -10));
+	// → -10
+}
 
 
 // Chapter 3.2 Functions (Recursion)
