@@ -9,6 +9,14 @@
    }
 
    .headings {
-      padding-right: 15%;
+      padding-right: 0;
+   }
+
+   .eloquent {
+      font-size: 350%;
+   }
+
+   .chapter {
+      margin:  0% 30% 0% 30%;
    }
 }

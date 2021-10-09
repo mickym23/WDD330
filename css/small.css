@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
 *, html, body {
 
    margin: 0 auto;
@@ -57,4 +59,53 @@ nav ul li a, nav ul li a:visited {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+/* Notes CSS */
+.notes {
+   font-family: "Source Code Pro", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+}
+
+.pdfNotes {
+   padding-top: 3%;
+   padding-bottom: 3%;
+   list-style-type: none;
+}
+
+.pdfNotes li {
+   padding: 2%;
+}
+
+.pdfNotes a, .pdfNotes a:visited {
+   color: white;
+   background-color: #3a3a3a;
+   text-decoration: none;
+   padding: 2%;  
+}
+
+.eloquent {
+   font-family: "Tangerine", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 300%;
+}
+
+.tip {
+   color: darkgreen;
+   font-weight: 700;
+}
+
+.chapter {
+   border: 7.5px #3a3a3a double;
+   margin:  0% 5% 0% 5%;
+}
+
+.chapter button {
+   margin-top: 1%;
+   margin-bottom: 3%;
+   padding: 1.5%;
+}
+
+.notes button {
+   color:azure;
+   background-color:olivedrab;
 }

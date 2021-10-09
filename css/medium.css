@@ -30,4 +30,8 @@
    nav ul {
       display: flex;
    }
+
+   .chapter {
+      margin:  0% 10% 0% 10%;
+   }
 }
