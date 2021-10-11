@@ -325,5 +325,58 @@ const logElements = () => {
 	// → 0
 }
 
+// Chapter 15:1 Balloon Event Handler
+const balloonEvent = () => {
+
+	const balloon = document.getElementById('balloon');
+	let size = 0;
+
+	const getSize = (secondSize) => {
+		size = secondSize;
+		balloon.style.fontSize = size + 'px';
+	}
+	
+	const eventHandler = (event) => {
+		if (event.key == "ArrowUp") {
+			if (size > 80) {
+				balloon.innerHTML = '💥';
+				document.body.removeEventListener("keydown", eventHandler);
+				window.setTimeout(() => location.reload(), 3000);
+			} else {
+				getSize(size * 1.1);
+				event.preventDefault();
+			}
+		}	else if (event.key == "ArrowDown") {
+			getSize(size * 0.9);
+			event.preventDefault();
+		}
+	}
+	
+	 getSize(20);
+	 window.addEventListener("keydown", eventHandler);
+}
+
+// Chapter 15.2 Mouse Trail
+const mouseTrail = () => {
+	let dots = [];
+  for (let i = 0; i < 12; i++) {
+    let node = document.createElement("div");
+    node.className = "trail";
+    document.body.appendChild(node);
+    dots.push(node);
+  }
+  let currentDot = 0;
+  
+ 
+  window.addEventListener("mousemove", event => {
+    let dot = dots[currentDot];
+    dot.style.left = (event.pageX - 3) + "px";
+    dot.style.top = (event.pageY - 3) + "px";
+    currentDot = (currentDot + 1) % dots.length;
+  });
+
+  document.getElementById('stopTrail').addEventListener('click', )
+
+}
 
 
