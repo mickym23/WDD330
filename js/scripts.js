@@ -408,3 +408,240 @@ const enableTabs = () => {
 	}
 	asTabs(document.querySelector("tab-panel"));
 }
+
+// chapter 6.1: Vector Class
+const vectorType = () => {
+	class Vec {
+		constructor (x, y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		plus (vector) {
+			let sumX = this.x + vector.x;
+			let sumY = this.y + vector.y;
+			return new Vec(sumX, sumY);
+		}
+
+		minus (vector) {
+			let diffX = this.x - vector.x;
+			let diffY = this.y - vector.y;
+			return new Vec(diffX, diffY);
+		}
+
+		get length() {
+			return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+		}
+	}
+
+	console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+	// → Vec{x: 3, y: 5}
+	console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+	// → Vec{x: -1, y: -1}
+	console.log(new Vec(3, 4).length);
+	// → 5
+}
+
+// Chapter 6.2: Group Class
+const groupClass = () => {
+	class Group {
+		constructor () {
+			this.collection = [];
+		}
+
+		add (val) {
+			if (this.collection.includes(val)) {
+				console.log('This item has been added already.');
+			} else {
+				this.collection.push(val);
+				console.log('Added!');
+			}
+		}
+
+		delete (val) {
+			const valIndex = this.collection.indexOf(val);
+			this.collection.splice(valIndex, 1);
+		}
+
+		has (val) {
+			if (this.collection.includes(val)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		static from (range) {
+			let group = new Group;
+			for (let  i = range[0]; i <= range[1]; i++) {
+				group.add(i);
+			}
+			return group;
+		}
+	 }
+	 
+	 let group = Group.from([10, 20]);
+
+	 console.log(group.collection);
+	 // [10, 11, 12, 13, 14, 15, 16, 17,18, 19, 20]
+	 console.log(group.has(10));
+	 // → true
+	 console.log(group.has(30));
+	 // → false
+	 group.add(10);
+	 // This item has been added already
+	 group.delete(10);
+	 console.log(group.has(10));
+	 // → false
+}
+
+// Chapter 6.3: Iteratable Groups
+const iteratableGroups = () => {
+	class Group {
+		constructor () {
+			this.collection = [];
+		}
+
+		add (val) {
+			if (this.collection.includes(val)) {
+				console.log('This item has been added already.');
+			} else {
+				this.collection.push(val);
+				console.log('Added!');
+			}
+		}
+
+		delete (val) {
+			const valIndex = this.collection.indexOf(val);
+			this.collection.splice(valIndex, 1);
+		}
+
+		has (val) {
+			if (this.collection.includes(val)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		static from (vals) {
+			let group = new Group;
+			for (let val of vals) {
+				group.add(val);
+			}
+			return group;
+		}
+
+		[Symbol.iterator]() {
+			return new GroupIterator(this);
+		 }
+	 }
+
+	 class GroupIterator {
+		constructor(group) {
+			this.group = group;
+			this.currentPosition = 0;
+		 }
+	  
+
+		 next() {
+			if (this.currentPosition >= this.group.collection.length) {
+				return {done: true};
+			 } else {
+				let result = {value: this.group.collection[this.currentPosition],
+								  done: false};
+				this.currentPosition++;
+				return result;
+			 }
+		  }
+		 }
+		 
+		 for (let value of Group.from(["a", "b", "c"])) {
+			console.log(value);
+		 }
+		 // → a
+		 // → b
+		 // → c
+}
+
+// Chapter 6.4 Borrowing a Method
+const borrowMethod = () => {
+	let map = {one: true, two: true, hasOwnProperty: true};
+
+	// Fix this call
+	console.log(Object.prototype.hasOwnProperty.call(map, "one"));
+	// → true
+}
+
+// Chapter 8.1: Retry
+const retry = () => {
+		class MultiplicatorUnitFailure extends Error {}
+
+		function primitiveMultiply(a, b) {
+		  if (Math.random() < 0.2) {
+			 return a * b;
+		  } else {
+			 throw new MultiplicatorUnitFailure("Klunk");
+		  }
+		}
+		
+		function reliableMultiply(a, b) {
+		  for (;;) {
+			  try {
+				  let output = primitiveMultiply(a, b);
+				  return output;
+			  } catch (e) {
+				if (!(e instanceof MultiplicatorUnitFailure)) {
+					throw e;
+				}
+			  }
+		  }
+		}
+		
+		console.log(reliableMultiply(8, 8));
+		// → 64
+}
+
+// Chapter 8.2: Locked Box
+const lockedBox = () => {
+	const box = {
+		locked: true,
+		unlock() { this.locked = false; },
+		lock() { this.locked = true;  },
+		_content: [],
+		get content() {
+		  if (this.locked) throw new Error("Locked!");
+		  return this._content;
+		}
+	 };
+	 
+	 function withBoxUnlocked(body) {
+		let locked = box.locked;
+		if (!locked) {
+		  return body();
+		}
+	 
+		box.unlock();
+		try {
+		  return body();
+		} finally {
+		  box.lock();
+		}
+	 }
+	 
+	 withBoxUnlocked(function() {
+		box.content.push("gold piece");
+	 });
+	 
+	 try {
+		withBoxUnlocked(function() {
+		  throw new Error("Pirates on the horizon! Abort!");
+		});
+	 } catch (e) {
+		console.log("Error raised:", e);
+	 }
+	 
+	 console.log(box.locked);
+	 // → true
+}
+
