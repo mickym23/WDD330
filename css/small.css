@@ -110,9 +110,22 @@ nav ul li a, nav ul li a:visited {
    background-color:olivedrab;
 }
 
-.trail { /* className for the trail elements */
+.trail {
    position: absolute;
-   height: 6px; width: 6px;
-   border-radius: 3px;
-   background: teal;
+   height: 12px; 
+   width: 12px;
+   background: linear-gradient(white,black);
+   pointer-events: none;
+   animation: roll 0.5s infinite;
+   transform: rotate(30deg);
+}
+
+@keyframes roll {
+   0% {
+     transform: rotate(0);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
  }
+ 

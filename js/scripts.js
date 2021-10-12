@@ -358,25 +358,53 @@ const balloonEvent = () => {
 
 // Chapter 15.2 Mouse Trail
 const mouseTrail = () => {
-	let dots = [];
-  for (let i = 0; i < 12; i++) {
-    let node = document.createElement("div");
-    node.className = "trail";
-    document.body.appendChild(node);
-    dots.push(node);
-  }
-  let currentDot = 0;
-  
- 
-  window.addEventListener("mousemove", event => {
-    let dot = dots[currentDot];
-    dot.style.left = (event.pageX - 3) + "px";
-    dot.style.top = (event.pageY - 3) + "px";
-    currentDot = (currentDot + 1) % dots.length;
-  });
-
-  document.getElementById('stopTrail').addEventListener('click', )
-
+	let trailElements = [];
+	for (let i = 0; i < 25; i++) {
+	  let node = document.createElement("div");
+	  node.className = "trail";
+	  document.body.appendChild(node);
+	  trailElements.push(node);
+	}
+	let currentElement = 0;
+	
+	window.addEventListener("mousemove", event => {
+	  let trail = trailElements[currentElement];
+	  trail.style.left = (event.pageX - 10) + "px";
+	  trail.style.top = (event.pageY - 10) + "px";
+	  trail.style.padding = '-30%';
+	  currentElement = (currentElement + 1) % trailElements.length;
+	});
 }
 
+// refresh for Mouse Trail
+const refreshPage = () => {
+	location.reload();
+}
 
+// Chapter 15:3 Tab List
+const enableTabs = () => {
+
+	function asTabs(node) {
+		let tabs = Array.from(node.children).map(node => {
+			let button = document.createElement("button");
+			button.textContent = node.getAttribute("data-tabname").toUpperCase();
+			let tab = {node, button};
+			button.addEventListener("click", () => selectTab(tab));
+			return tab;
+		 });	
+
+		 let tabList = document.createElement("div");
+    	for (let {button} of tabs) tabList.appendChild(button);
+    	node.insertBefore(tabList, node.firstChild);
+
+		 const selectTab = (selectedTab) => {
+			for (let tab of tabs) {
+				let selected = tab == selectedTab;
+				tab.node.style.display = selected ? "" : "none";
+				tab.button.style.color = selected ? "red" : "";
+			 }
+		  }
+		  selectTab(tabs[0]);
+	}
+	asTabs(document.querySelector("tab-panel"));
+}
