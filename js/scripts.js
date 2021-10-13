@@ -248,167 +248,6 @@ const deepComparison = () => {
 	// → true
 }
 
-// Chapter 14.1 Build a Table
-// I went through the book and struggled with this one, this is mainly the Eloquent JS Chap 14.1 code. 
-// I have gone through the code and understand how it works and how the data is passed through to the div
-const displayTable = () => {
-
-	const MOUNTAINS = [
-		{name: "Kilimanjaro", height: 5895, place: "Tanzania"},
-		{name: "Everest", height: 8848, place: "Nepal"},
-		{name: "Mount Fuji", height: 3776, place: "Japan"},
-		{name: "Vaalserberg", height: 323, place: "Netherlands"},
-		{name: "Denali", height: 6168, place: "United States"},
-		{name: "Popocatepetl", height: 5465, place: "Mexico"},
-		{name: "Mont Blanc", height: 4808, place: "Italy/France"}
-	 ];
-
-	 const buildTable = (data) => {
-	 let table = document.createElement("table");
-  
-    let fields = Object.keys(data[0]);
-    let headRow = document.createElement("tr");
-    fields.forEach(function(field) {
-      let headCell = document.createElement("th");
-      headCell.appendChild(document.createTextNode(field));
-      headRow.appendChild(headCell);
-    });
-    table.appendChild(headRow);
-
-    data.forEach(function(object) {
-      let row = document.createElement("tr");
-      fields.forEach(function(field) {
-        let cell = document.createElement("td");
-        cell.appendChild(document.createTextNode(object[field]));
-        row.appendChild(cell);
-      });
-      table.appendChild(row);
-    });
-
-    return table;
-	}
-	document.querySelector("#mountains").appendChild(buildTable(MOUNTAINS));
-	
-	const disableButton = () => {
-		document.getElementById('tableButton').setAttribute("disabled", "disabled"); 
-	 }
-
-	 disableButton();
-}
-
-// Chapter 14.2 Elements by Tag name
-const logElements = () => {
-	const byTagName = (node, str) => {
-		let arr = [];
-		str = str.toUpperCase();
-		
-		const countInstances = (node) => {
-			for (let i = 0; i < node.childNodes.length; i++) {
-				let child = node.childNodes[i];
-				if (child.nodeType == document.ELEMENT_NODE) {
-					if (child.nodeName == str) {
-						arr.push(child);
-					}
-					countInstances(child);
-				}
-			}
-		}
-		countInstances(node);
-		return arr;
-	}
-	console.log(byTagName(document.body, "h1").length);
-	// → 2
-	console.log(byTagName(document.body, "span").length);
-	// → 1
-	let para = document.querySelector("p");
-	console.log(byTagName(para, "span").length);
-	// → 0
-}
-
-// Chapter 15:1 Balloon Event Handler
-const balloonEvent = () => {
-
-	const balloon = document.getElementById('balloon');
-	let size = 0;
-
-	const getSize = (secondSize) => {
-		size = secondSize;
-		balloon.style.fontSize = size + 'px';
-	}
-	
-	const eventHandler = (event) => {
-		if (event.key == "ArrowUp") {
-			if (size > 80) {
-				balloon.innerHTML = '💥';
-				document.body.removeEventListener("keydown", eventHandler);
-				window.setTimeout(() => location.reload(), 3000);
-			} else {
-				getSize(size * 1.1);
-				event.preventDefault();
-			}
-		}	else if (event.key == "ArrowDown") {
-			getSize(size * 0.9);
-			event.preventDefault();
-		}
-	}
-	
-	 getSize(20);
-	 window.addEventListener("keydown", eventHandler);
-}
-
-// Chapter 15.2 Mouse Trail
-const mouseTrail = () => {
-	let trailElements = [];
-	for (let i = 0; i < 25; i++) {
-	  let node = document.createElement("div");
-	  node.className = "trail";
-	  document.body.appendChild(node);
-	  trailElements.push(node);
-	}
-	let currentElement = 0;
-	
-	window.addEventListener("mousemove", event => {
-	  let trail = trailElements[currentElement];
-	  trail.style.left = (event.pageX - 10) + "px";
-	  trail.style.top = (event.pageY - 10) + "px";
-	  trail.style.padding = '-30%';
-	  currentElement = (currentElement + 1) % trailElements.length;
-	});
-}
-
-// refresh for Mouse Trail
-const refreshPage = () => {
-	location.reload();
-}
-
-// Chapter 15:3 Tab List
-const enableTabs = () => {
-
-	function asTabs(node) {
-		let tabs = Array.from(node.children).map(node => {
-			let button = document.createElement("button");
-			button.textContent = node.getAttribute("data-tabname").toUpperCase();
-			let tab = {node, button};
-			button.addEventListener("click", () => selectTab(tab));
-			return tab;
-		 });	
-
-		 let tabList = document.createElement("div");
-    	for (let {button} of tabs) tabList.appendChild(button);
-    	node.insertBefore(tabList, node.firstChild);
-
-		 const selectTab = (selectedTab) => {
-			for (let tab of tabs) {
-				let selected = tab == selectedTab;
-				tab.node.style.display = selected ? "" : "none";
-				tab.button.style.color = selected ? "red" : "";
-			 }
-		  }
-		  selectTab(tabs[0]);
-	}
-	asTabs(document.querySelector("tab-panel"));
-}
-
 // chapter 6.1: Vector Class
 const vectorType = () => {
 	class Vec {
@@ -643,5 +482,166 @@ const lockedBox = () => {
 	 
 	 console.log(box.locked);
 	 // → true
+}
+
+// Chapter 14.1 Build a Table
+// I went through the book and struggled with this one, this is mainly the Eloquent JS Chap 14.1 code. 
+// I have gone through the code and understand how it works and how the data is passed through to the div
+const displayTable = () => {
+
+	const MOUNTAINS = [
+		{name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+		{name: "Everest", height: 8848, place: "Nepal"},
+		{name: "Mount Fuji", height: 3776, place: "Japan"},
+		{name: "Vaalserberg", height: 323, place: "Netherlands"},
+		{name: "Denali", height: 6168, place: "United States"},
+		{name: "Popocatepetl", height: 5465, place: "Mexico"},
+		{name: "Mont Blanc", height: 4808, place: "Italy/France"}
+	 ];
+
+	 const buildTable = (data) => {
+	 let table = document.createElement("table");
+  
+    let fields = Object.keys(data[0]);
+    let headRow = document.createElement("tr");
+    fields.forEach(function(field) {
+      let headCell = document.createElement("th");
+      headCell.appendChild(document.createTextNode(field));
+      headRow.appendChild(headCell);
+    });
+    table.appendChild(headRow);
+
+    data.forEach(function(object) {
+      let row = document.createElement("tr");
+      fields.forEach(function(field) {
+        let cell = document.createElement("td");
+        cell.appendChild(document.createTextNode(object[field]));
+        row.appendChild(cell);
+      });
+      table.appendChild(row);
+    });
+
+    return table;
+	}
+	document.querySelector("#mountains").appendChild(buildTable(MOUNTAINS));
+	
+	const disableButton = () => {
+		document.getElementById('tableButton').setAttribute("disabled", "disabled"); 
+	 }
+
+	 disableButton();
+}
+
+// Chapter 14.2 Elements by Tag name
+const logElements = () => {
+	const byTagName = (node, str) => {
+		let arr = [];
+		str = str.toUpperCase();
+		
+		const countInstances = (node) => {
+			for (let i = 0; i < node.childNodes.length; i++) {
+				let child = node.childNodes[i];
+				if (child.nodeType == document.ELEMENT_NODE) {
+					if (child.nodeName == str) {
+						arr.push(child);
+					}
+					countInstances(child);
+				}
+			}
+		}
+		countInstances(node);
+		return arr;
+	}
+	console.log(byTagName(document.body, "h1").length);
+	// → 2
+	console.log(byTagName(document.body, "span").length);
+	// → 1
+	let para = document.querySelector("p");
+	console.log(byTagName(para, "span").length);
+	// → 0
+}
+
+// Chapter 15:1 Balloon Event Handler
+const balloonEvent = () => {
+
+	const balloon = document.getElementById('balloon');
+	let size = 0;
+
+	const getSize = (secondSize) => {
+		size = secondSize;
+		balloon.style.fontSize = size + 'px';
+	}
+	
+	const eventHandler = (event) => {
+		if (event.key == "ArrowUp") {
+			if (size > 80) {
+				balloon.innerHTML = '💥';
+				document.body.removeEventListener("keydown", eventHandler);
+				window.setTimeout(() => location.reload(), 3000);
+			} else {
+				getSize(size * 1.1);
+				event.preventDefault();
+			}
+		}	else if (event.key == "ArrowDown") {
+			getSize(size * 0.9);
+			event.preventDefault();
+		}
+	}
+	
+	 getSize(20);
+	 window.addEventListener("keydown", eventHandler);
+}
+
+// Chapter 15.2 Mouse Trail
+const mouseTrail = () => {
+	let trailElements = [];
+	for (let i = 0; i < 25; i++) {
+	  let node = document.createElement("div");
+	  node.className = "trail";
+	  document.body.appendChild(node);
+	  trailElements.push(node);
+	}
+	let currentElement = 0;
+	
+	window.addEventListener("mousemove", event => {
+	  let trail = trailElements[currentElement];
+	  trail.style.left = (event.pageX - 10) + "px";
+	  trail.style.top = (event.pageY - 10) + "px";
+	  trail.style.padding = '-30%';
+	  currentElement = (currentElement + 1) % trailElements.length;
+	});
+}
+
+// refresh for Mouse Trail
+const refreshPage = () => {
+	location.reload();
+}
+
+// Chapter 15:3 Tab List
+const enableTabs = () => {
+
+	function asTabs(node) {
+		let tabs = Array.from(node.children).map(node => {
+			let button = document.createElement("button");
+			button.textContent = node.getAttribute("data-tabname").toUpperCase();
+			let tab = {node, button};
+			button.addEventListener("click", () => selectTab(tab));
+			return tab;
+		 });	
+
+		 let tabList = document.createElement("div");
+    	for (let {button} of tabs) tabList.appendChild(button);
+    	node.insertBefore(tabList, node.firstChild);
+
+		 const selectTab = (selectedTab) => {
+			for (let tab of tabs) {
+				let selected = tab == selectedTab;
+				tab.node.style.display = selected ? "" : "none";
+				tab.button.style.color = selected ? "red" : "";
+			 }
+		  }
+		  selectTab(tabs[0]);
+	}
+	asTabs(document.querySelector("tab-panel"));
 }
 
