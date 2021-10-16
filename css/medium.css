@@ -29,9 +29,20 @@
 
    nav ul {
       display: flex;
+      text-align: justify;
    }
 
    .chapter {
       margin:  0% 10% 0% 10%;
+   }
+
+   .taH1 {
+      padding-top: 3%;
+      font-size: 200%;
+   }
+
+   .linkButton {
+      margin: 1%;
+      font-size: 120%;
    }
 }

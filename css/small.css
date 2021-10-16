@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Merienda&display=swap');
+
+:root {
+   --oceanBlue: #48639c;
+}
 
 *, html, body {
 
@@ -129,4 +134,29 @@ nav ul li a, nav ul li a:visited {
      transform: rotate(360deg);
    }
  }
+
+.textCenter {
+   text-align: center;
+}
+
+.taH1 {
+   font-family: "Mali", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   padding-top: 5%;
+}
+
+.linkButton {
+   display: inline-block;
+   padding: 2%;
+   border: 1px solid black;
+   margin: 2%;
+   line-height: 1em;
+   text-decoration: none;
+   color: white;
+   background-color: var(--oceanBlue);
+   font-family: "Mali", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 130%;
+}
+
+
+
  

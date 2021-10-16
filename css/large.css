@@ -9,7 +9,8 @@
    }
 
    .headings {
-      padding-right: 0;
+      z-index: 1;
+      text-align: center;
    }
 
    .eloquent {
@@ -18,5 +19,17 @@
 
    .chapter {
       margin:  0% 30% 0% 30%;
+   }
+
+   .taH1 {
+      padding-top: 2%;
+      font-size: 200%;
+      padding-bottom: 2%;
+   }
+
+   .linkButton {
+      padding: 1%;
+      margin: 0.5%;
+      font-size: 120%;
    }
 }
