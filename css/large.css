@@ -8,6 +8,10 @@
       max-width: 10%;
    }
 
+   .homeH1 {
+      padding: 3%;
+   }
+
    .headings {
       z-index: 1;
       text-align: center;

@@ -51,6 +51,8 @@ ul {
    list-style-type: none;
    margin: 0;
    padding: 0;
+   border: solid 1px white;
+   border-bottom: none;
 }
 
 nav ul li {
@@ -64,6 +66,48 @@ nav ul li a, nav ul li a:visited {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.homeBanner {
+   width: 100%;
+}
+
+.homeH1 {
+   background-image: url(../img/homebanner.jpg);
+   background-position:center;
+   padding: 5%;
+   color: white;
+   border: 2px double white;
+}
+
+.homeBody {
+   background-color: var(--oceanBlue);
+}
+
+.project {
+   background-color: white;
+   text-align: center;
+   width: 50%;
+   padding: 1%;
+   margin-top: 2%;
+   font-family: "Tangerine", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 150%;
+   border: 4px outset black;
+}
+
+.project h2 {
+   font-size: 160%;
+   font-weight: 700;
+}
+
+.project a, .project a:visited {
+   display: inline-block;
+   text-decoration: none;
+   padding: 1%;
+   margin-top: 2%;
+   border: 1px solid black;
+   background-color: #3a3a3a;
+   color: white;
 }
 
 /* Notes CSS */
