@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="WDD330 Web Frontend Development II, BYU-Idaho. Student: Mikhail Cedras">
+   <title>WDD330 | To-Do List</title> 
+     <!-- CSS -->
+     <link rel="stylesheet" href="../css/small.css">
+     <link rel="stylesheet" href="../css/medium.css">
+     <link rel="stylesheet" href="../css/large.css">
+
+     <link rel = "shortcut icon" href = "../img/favicon.ico">
+  </head>
+  
+  <body class="to-do-body">
+  
+   <div id="mainHeader"></div>
+   <div id='navDiv'></div>
+   <main class="to-do-main">
+   <h1>To-Do List</h1>
+
+      <div class="taskDisplay">
+
+         <div class="dailyTasks">
+            <form action="./to-do.html" method="post">
+            <label for="check">
+            <input name="check" id="check" type="checkbox">
+            </label>
+            <button type="submit">X</button>
+            </form>
+         </div>
+
+         <div class="filterOptions"></div>
+
+         <form action="to-do.html" method="post">
+            <label for="content"></label>
+            <input type="text name="content" id="name">
+            <input type="hidden" id="timestamp" value="">
+            <button type="submit">+</button>
+         </form>
+
+      </div>
+   
+   </main>
+   <!-- <script src="js/main.js" ></script> -->
+   <script src="../snippets/nav.js"></script>
+   <script src="../snippets/header.js"></script>
+   <script type="module" src="../js/todo/main.js"></script>
+</body>
+<br> <br>
+<footer>
+  
+   <div id="footerDiv"></div>
+   <script src="../snippets/footer.js"></script>
+</footer>
+
+</html>

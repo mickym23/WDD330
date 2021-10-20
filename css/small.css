@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mali&family=Merienda&display=swap');
 
@@ -49,11 +50,18 @@ nav {
 
 ul {
    list-style-type: none;
-   margin: 0;
    padding: 0;
-   border: solid 1px white;
-   border-bottom: none;
+   border: inset 3px white;
+
 }
+
+.navigation li:first-child {
+   display: block;
+ }
+ 
+ .navigation li {
+   display: none;
+ }
 
 nav ul li {
    display: inline;
@@ -68,6 +76,10 @@ nav ul li a, nav ul li a:visited {
   text-decoration: none;
 }
 
+.responsive li {
+   display: block;
+ }
+
 .homeBanner {
    width: 100%;
 }
@@ -78,6 +90,7 @@ nav ul li a, nav ul li a:visited {
    padding: 5%;
    color: white;
    border: 2px double white;
+   border-top: none;
 }
 
 .homeBody {
@@ -199,6 +212,49 @@ nav ul li a, nav ul li a:visited {
    background-color: var(--oceanBlue);
    font-family: "Mali", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    font-size: 130%;
+}
+
+/*********************
+      To-Do List
+*********************/
+
+.to-do-body {
+   background-image: url('../img/oriental-tiles.png');
+}
+
+.to-do-main {
+   font-family: "Tangerine", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   width: 75%;
+   
+   border-top: 2px white inset;
+   margin-top: 2%;
+}
+
+.to-do-main h1:nth-child(1) {
+   font-size: 230%;
+   background: white;
+   opacity: 75%;
+   text-align: center;
+   padding: 1%;
+}
+
+#footerDiv {
+      font-size: 130%;
+      font-family: "Playfair Display", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background: var(--oceanBlue);
+      text-align: center;
+      padding: 1%;
+      color: whitesmoke;
+      border: 3px white inset;
+}
+
+.taskDisplay {
+   background: white;
+   opacity: 75%;
+
+   margin-top: 2%;
+   border: 2px solid white;
+   padding: 5% 0% 5% 0%;
 }
 
 

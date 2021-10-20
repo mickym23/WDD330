@@ -23,14 +23,25 @@
    }
 
    nav ul li a, nav ul li a:visited {
-
       text-align: center;
    }
 
    nav ul {
       display: flex;
       text-align: justify;
+      width: 100%;
    }
+
+   .navigation {
+      display: flex;
+    }
+    .navigation li:first-child {
+      display: none;
+    }
+    .navigation li {
+      display: block;
+      flex: 1 1 100%;
+    }
 
    .chapter {
       margin:  0% 10% 0% 10%;
