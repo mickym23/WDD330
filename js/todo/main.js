@@ -1,9 +1,22 @@
-// Import TODOS.js
+import { toDoClass } from './Todos.js';
 
-import todo from './Todos';
+const date = new Date();
+const timestamp = date.getTime().toString();
+const completed = false;
 
-const content = document.getElementById('content').value;
+document.getElementById('addTask').addEventListener('click', () => {
+   const content = document.getElementById('content').value;
+   const newTask = new toDoClass(timestamp, content, completed);
+   toDoClass.save(timestamp, newTask);
+  // location.reload('/');
+})
 
-todo.save(content);
+console.log(JSON.parse(localStorage.getItem('toDoList')).length);
+window.addEventListener('load', () => {
+   toDoClass.getTasks();
+});
 
-console.log(localStorage.getItem("content"));
+
+
+
+
