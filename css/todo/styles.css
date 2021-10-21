@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Cinzel&family=Noto+Serif+Display:ital,wght@0,300;1,400&display=swap');
+
+
+.taskDisplay {
+   font-family: "Cinzel", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.deleteTask {
+   color: red;
+}

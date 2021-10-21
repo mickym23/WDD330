@@ -16,10 +16,20 @@ export function saveContent(timestamp, obj) {
    }
 }
 
-export function getContent(key) {
-   const json = JSON.parse(localStorage.getItem(key));
-  // console.log(json);
-  // console.log(key);
-   return json;
+export function getContent() {
+   const contentArr = JSON.parse(localStorage.getItem('toDoList'))
+   return contentArr;
+}
+
+export function deleteSpecificTask(key) {
+   const contentArr = JSON.parse(localStorage.getItem('toDoList'));
+   contentArr.splice(key, 1);
+   localStorage.setItem('toDoList', JSON.stringify(contentArr));
+   console.log('Deleted item and saved new array.');
+  // window.location.reload('/');
+}
+
+export function clear() {
+   localStorage.clear();
 }
 

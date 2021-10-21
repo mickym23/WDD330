@@ -1,6 +1,6 @@
-// default module export, helper funcitons are added here
-import { getContent, saveContent } from './ls.js';
-import {addToIdArray, buildTasks } from './utilities.js';
+// default module export, helper functions are added here
+import { getContent, saveContent, clear, deleteSpecificTask } from './ls.js';
+import {addToIdArray, buildTasks} from './utilities.js';
 
 export const toDoClass = class ToDo {
    constructor(timestamp, string, boolean) {
@@ -14,16 +14,25 @@ export const toDoClass = class ToDo {
    }
 
    static getTasks() {
-      for (let i = 0; i < localStorage.length; i++) {
-       //  console.log(timeArr[i]);
-        //
-         
+      let taskArray = getContent();
+      if (taskArray == 'undefined') {
+         console.log('nothing')
+      } else {
+         buildTasks(taskArray);
       }
+
    }
 
    static addToArr(timestamp) {
       addToIdArray(timestamp);
       
+   }
+
+   static deleteTask(key) {
+      deleteSpecificTask(key);
+   }
+   static clearAllTasks() {
+      clear();
    }
 
 }
