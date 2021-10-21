@@ -1,1 +1,1 @@
-document.getElementById('mainHeader').innerHTML = '<header><img src="/img/wdd330logo.png" alt="WDD330 Logo Mikhail"><div class="headings"><h1>WDD330 Portfolio</h1><h2>Mikhail Cedras</h2></div></header>';
+document.getElementById('mainHeader').innerHTML = '<header><img src="/WDD330/img/wdd330logo.png" alt="WDD330 Logo Mikhail"><div class="headings"><h1>WDD330 Portfolio</h1><h2>Mikhail Cedras</h2></div></header>';

@@ -11,7 +11,7 @@ document.getElementById('addTask').addEventListener('click', () => {
   // location.reload('/');
 })
 
-console.log(JSON.parse(localStorage.getItem('toDoList')).length);
+console.log(JSON.parse(localStorage.getItem('toDoList')));
 window.addEventListener('load', () => {
    toDoClass.getTasks();
 });
