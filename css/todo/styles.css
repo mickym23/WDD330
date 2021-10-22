@@ -4,6 +4,39 @@
 .taskDisplay {
    font-family: "Cinzel", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+/* 
+.dailyTasks ul li{
+   display: flex;
+   flex-direction: row;
+} */
+
+#tasks {
+   border: none;
+   display: flex;
+   flex-direction: column;
+   grid-gap: 0px;
+}
+
+#tasks div{
+   width: 100%;
+   display: flex;
+   align-items: center;
+}
+
+
+
+#tasks div input {
+   position:relative;
+   margin: 0;
+   width: 30px;
+   height: 30px;;
+
+
+}
+/* 
+#tasks div input, #tasks div p {
+   text-align: left;
+} */
 
 .deleteTask {
    color: red;

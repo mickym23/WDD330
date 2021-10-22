@@ -3,28 +3,25 @@
 //Check, etc.
 
 export function addToIdArray(timestamp) {
-   timeArr.push(timestamp); 
+   timeArr.push(timestamp);
+   
 }
 
 export function buildTasks(tasks) {
-   let output;
-   if (tasks == null || []) {
-    //output = document.getElementById('taskPlaceholder').innerText = 'Yours tasks will go here...';
+   let output = '';
+   if (tasks == null || tasks == []) {
+      document.getElementById('tasks').innerHTML = '';
    } else {
-      output = document.createElement('ul');
-
-      for (let i = 0; i < tasks.length; i++) {
-         let p = document.createElement('a');
-         p.textContent = tasks[i].content;
-         let span = document.createElement('span');
-         span.className = 'deleteTask';
-         span.textContent = 'X';
-         let li = document.createElement('li');
-         li.appendChild(p);
-         li.appendChild(span);
-         output.appendChild(li);
-      }
-      
-      document.getElementById('dailyTasks').appendChild(output);
+      tasks.map((task, i) => {
+         output += `<input type="checkbox"><p>${task.content}</p><button type="button" onClick="deleteItem(0) id="${task.id}" class="btn">X</button>`
+      });
    }
-}
+   function deleteItem(index){
+      let localItems = JSON.parse( localStorage.getItem('localItem'))
+      taskList.splice(index, 1)
+      localStorage.setItem('localItem', JSON.stringify(taskList));
+      showItem()
+   }
+   const taskList = document.getElementById('tasks');
+   taskList.innerHTML = output;
+   }
