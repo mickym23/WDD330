@@ -41,3 +41,107 @@
 .deleteTask {
    color: red;
 }
+
+.task-li {
+   margin: 0 auto;
+   padding: 5%;
+   display: flex;
+   border: 0.02rem black solid;
+   width: 75%;
+   position: relative;
+   overflow: hidden;
+   margin-bottom: 2%;
+}
+
+.task-li button {
+   border: none;
+   background-color: red;
+   position: absolute;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   padding: 1rem;
+   color: white;
+}
+
+.task-li p {
+   font-size: 1rem;
+}
+
+input[type="checkbox"]{
+   margin-left: 2%;
+   appearance:initial;
+   border: 1px solid black;
+   position: absolute;
+   width: 2em;
+   height: 1.7em;
+}
+input[type="checkbox"]:checked {
+   background: black;
+}
+input[type="checkbox"]:checked:after {
+   content: "X";
+   color: white;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+}
+
+#content {
+   padding: 2%;
+   font-family: "Anapey", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 0.8rem;
+   border: white solid 2px;
+   background-color: black;
+   color:white;
+}
+
+#addTask {
+   padding: 2%;
+   width: auto;
+   background-color:  black;
+   border: 2px white solid;
+   color: white;
+}
+
+#clearTask {
+   padding: 25;
+   background-color: red;
+   color: white;
+
+}
+
+.strikethrough {
+   text-decoration: line-through;
+}
+
+.filterOptions {
+   display: flex;
+   
+}
+
+@media only screen and (min-width: 60em) {
+   .task-li {
+      width: 50%;
+      padding: 2%;
+   }
+
+   .task-li p {
+      font-size: 1.2em;
+   }
+
+   #content {
+      font-size: 130%;
+   }
+
+   #addTask {
+      font-size: 130%;
+      width: auto;
+   }
+
+   #clearTask {
+      font-size: 110%;
+      padding: 2%;
+   }
+}

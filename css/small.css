@@ -233,7 +233,7 @@ nav ul li a, nav ul li a:visited {
 .to-do-main h1:nth-child(1) {
    font-size: 230%;
    background: white;
-   opacity: 75%;
+   opacity: 95%;
    text-align: center;
    padding: 1%;
 }
@@ -250,7 +250,7 @@ nav ul li a, nav ul li a:visited {
 
 .taskDisplay {
    background: white;
-   opacity: 75%;
+   opacity: 95%;
 
    margin-top: 2%;
    border: 2px solid white;
