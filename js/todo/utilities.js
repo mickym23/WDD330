@@ -9,9 +9,13 @@ export function addToIdArray(timestamp) {
 }
 
 export function buildTasks(tasks, deleteTasks) {
-   if (tasks == null || tasks == []) {
-      document.getElementById('tasks').innerHTML = '';
+   if (tasks == null || tasks == [] || tasks == '') {
+      document.getElementById('tasks').innerHTML = '<li>No Tasks to display</li><br><br>';
+      const amountOfTasks = fetchArr().length;
+      const tasksLeft = document.getElementById('tasksLeft');
+      tasksLeft.textContent = `${amountOfTasks} tasks left`;
    } else {
+      console.log('Else block output:' + tasks);
       const taskList = document.getElementById('tasks');
       taskList.innerHTML = '';
       const arr = fetchArr();
