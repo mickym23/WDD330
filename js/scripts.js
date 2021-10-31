@@ -1,3 +1,5 @@
+
+
 // Chapter 2.1 Looping a Triangle
 const loopTriangle = () => {
 	let hash = '';
@@ -247,6 +249,52 @@ const deepComparison = () => {
 	console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 	// → true
 }
+
+// Chapter 5.1: Flattening an Array
+const reduceArr = () => {
+	let arrays = [[1, 2, 3], [4, 5], [6]];
+
+	const reducedArr = (arrays.reduce((a, b) => a.concat(b), []))
+
+	console.log(reducedArr)
+	// Output → [1, 2, 3, 4, 5, 6]
+}
+
+// Chapter 5.2: your Own Loop
+const runOwnLoop = () => {
+	const loop = (n, testFunction, outputFunction, output) => {
+		for (let i = n; testFunction(i); i = outputFunction(i)) {
+			output(i)
+		}
+	}
+
+	loop(3, n => n > 0, n => n - 1, console.log);
+	// → 3
+	// → 2
+	// → 1
+}
+
+// Chapter 5.3: Everything (Every || Some)
+const runEverything = () => {
+	const every = (arr, testFunction) => {
+		for (let i = 0; i < arr.length; i++) {
+			if (!testFunction(arr[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+ 
+	const everyWithSome = (arr, testFunction) => { return !arr.some(a => !testFunction(a))}
+ 
+	console.log(every([1, 3, 5], n => n < 10));
+	// → true
+	console.log(every([2, 4, 16], n => n < 10));
+	// → false
+	console.log(every([], n => n < 10));
+	// → true
+}
+
 
 // chapter 6.1: Vector Class
 const vectorType = () => {
@@ -645,3 +693,37 @@ const enableTabs = () => {
 	asTabs(document.querySelector("tab-panel"));
 }
 
+// Chapter 18.1: Content Negotiation
+const runNego = () => {
+	const url = "https://eloquentjavascript.net/author";
+	const urlSettings = [
+		"text/plain",
+		"text/html",
+		"application/json",
+		"application/rainbows+unicorns"
+	];
+
+	async function getSettings() {
+		for (let setting of urlSettings) {
+			let response = await fetch(url, {
+				headers: {
+					accept: setting
+				}
+			});
+			console.log(`${setting}: ${await response.text()}\n`);
+		}
+	}
+	getSettings();
+}
+
+// Chapter 18.2: A JavaScript WorkBench
+document.getElementById('chap18_2button').addEventListener('click', () => {
+	const code = document.getElementById('code').value;
+	const pre = document.getElementById('output');
+	let output = Function(code)();
+	try {
+		pre.textContent = String(output);
+	} catch (e) {
+      pre.text = String("Error: " + e);
+    }
+})
