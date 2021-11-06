@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Serif+Display:wght@300&display=swap');
+
+html, body {
+   margin: 0 auto;
+   padding: 0;
+}
+
+main {
+   font-family: "Nothing You Could Do", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   margin: 0 auto;
+   background-color: black;
+   padding-bottom: 20%;
+   overflow: hidden;
+}
+
+.headingText {
+   margin-top: 5%;
+   color: lightgreen;
+   font-size: 1.7rem;
+   text-align: center;
+}
+
+.outer-box {
+   width: 15em;
+   height: 15em;
+   position: relative;
+   background-color: pink;
+   margin: 0 auto;
+   box-shadow: 
+         0 0 0 0.25em blue,
+         0 0 0 0.5em black,
+         0 0 0 0.75em red,
+         0 0 0 1em lightgreen,
+         0 0 0 1.25em yellow,
+         0 0 0 1.5em darkmagenta;
+   margin-top: 10%;
+   position: relative;
+}
+.transformed {
+   width: 6em;
+   height: 6em;
+   background-color: yellowgreen;
+   margin: 0 auto;
+   transform: rotate(45deg);
+   margin-top: 0%;
+   color: blue;
+   font-weight: 500;
+   font-size: 1.5rem;
+   position: relative;
+   top: 50px;
+   border-radius: 10%;
+   box-shadow: 
+         0 0 0 5px black,
+         0 0 0 10px red,
+         0 0 0 15px black,
+         0 0 0 20px red
+}
+
+.divP {
+   transform: rotate(-45deg);
+   position: absolute;
+   top: 20px;
+   left: 25px;
+   font-size: 0.9em;
+   font-weight: 900;
+}
+
+.parentWrapper {
+   width: 17em;
+   height: 17em;
+   background-color: lightblue;
+   margin-top: 5%;
+   position: relative;
+   display: grid;
+   box-shadow: 
+      0 0 0 5px black,
+      0 0 0 10px red
+ }
+ 
+ .circleTitle {
+   text-align: center;
+   
+ }
+ 
+ .circle {
+   width: 5em;
+   height: 5em;
+   background-color: red;
+   margin: auto auto 0 auto;
+   border-radius: 50%;
+ /*   transition: 1000ms 500ms ease-out; */
+  
+ }
+ 
+ .parentWrapper:hover .circle {
+   animation: jump 1000ms 500ms infinite ease-out;
+ /*   cubic-bezier(.15,.76,.56,.74) */
+ }
+ 
+ @keyframes jump {
+   50% {
+     transform: translateY(-150px) ;
+   }
+ }
+
+ #canvas { 
+    display:block;
+    margin: 0 auto;
+   border: 5px solid yellow; 
+   background-color: black;
+   
+ }
