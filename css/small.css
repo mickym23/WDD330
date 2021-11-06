@@ -241,10 +241,10 @@ nav ul li a, nav ul li a:visited {
 #footerDiv {
       font-size: 130%;
       font-family: "Playfair Display", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      background: var(--oceanBlue);
+      background: floralwhite;
       text-align: center;
       padding: 1%;
-      color: whitesmoke;
+      color: black;
       border: 3px white inset;
 }
 
