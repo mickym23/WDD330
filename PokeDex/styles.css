@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Bungee+Shade&family=Goblin+One&family=Luckiest+Guy&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+/* 
+* {
+   outline: 1px solid #f00 !important;
+ } */
+
+html, body {
+   background-color: rgba(255,203,5);
+   margin: 0 auto;
+   padding: 0;
+   box-sizing: border-box;
+   max-width: 100%;
+   width: 100%;
+}
+
+main {
+   max-width: 100%;
+   margin: 0 auto;
+   
+}
+
+h1 {
+   text-align: center;
+   font-family: "Pokemon Solid", sans-serif;
+   letter-spacing: 3px;
+   margin: 0;
+   background-color: #666666;
+   -webkit-background-clip: text;
+   -moz-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   text-shadow: rgba(0,58,112,0.5) 0px 3px 3px;
+}
+
+.pokemon-section {
+   margin: 0 auto;
+   max-width: 100%;
+   width: 100%;
+   background-color: black;
+   padding-bottom: 5%;
+}
+
+
+#pokemon {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   row-gap: 5px;
+   padding: 3%;
+   column-gap: 5px;
+
+   /* background-color: white; */
+   margin: 0 auto;
+}
+
+.pokemon-card {
+   border: lightblue solid 2px;
+   margin: 0 auto;
+   padding: 10%;
+   max-width: 100%;
+   width: 80%;
+   text-transform: uppercase;
+   font-family: "Luckiest Guy", sans;
+   border-radius: 5px;
+   justify-content: center;
+   background-color: rgba(42, 113, 179, 0.5);
+   transition: transform 200ms 50ms ease-out;
+}
+
+.pokemon-card:hover {
+   transform: scale(1.02);
+   background-color: rgba(42, 113, 179, 1);
+   box-shadow:0 0  30px white;
+}
+
+.img-container {
+   margin: 0 auto;
+   width: 100px;
+   height: 100px;
+   border: 5px white double;
+   padding: 15%;
+   border-radius: 50%;
+   overflow: hidden;
+   background-color: lightblue;
+}
+
+.img-container img{
+   width: 100px;
+   height: 100px;
+  
+}
+
+.poke-details {
+   color: lightblue;
+   
+}
+
+.poke-details ul {
+   padding-left: 14%;
+   text-align: left;
+}
+
+.poke-details p:nth-child(1) {
+   text-align: center;
+   font-size: 1.4em;
+}
+
+.poke-details p:nth-child(2) {
+   color: rgba(255,203,5);
+
+}
+
+#buttons {
+   padding-top: 2%;
+   text-align: center;
+
+}
+
+.btn {
+   border: 2px solid lightblue;
+   padding: 0.5%;
+   width: 150px;
+   font-family: "Goblin One", sans-serif;
+   font-size: 1em;
+   background: rgba(255,203,5);
+   color: rgba(0,58,112);
+}
+
+@media screen and (min-width: 600px) {
+
+   #pokemon {
+      column-gap: 10px;
+      row-gap: 10px;
+   }
+
+   .pokemon-card {
+      width: 80%;
+   }
+
+   .img-container {
+      width: 175px;
+      height: 175px;
+   }
+
+   .img-container img { 
+      width: 175px;
+      height: 175px;
+   }
+
+   .poke-details p:nth-child(1) {
+      font-size: 1.6em;
+   }
+
+   .poke-details ul {
+      padding-left: 9%;
+   }
+
+   .btn {
+      width: 200px;
+   }
+   
+}
+
+@media screen and (min-width: 900px) {
+   #pokemon {
+      padding: 1%;
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .pokemon-card {
+      width: 80%;
+   }
+
+   .img-container {
+      width: 175px;
+      height: 175px;
+   }
+
+   .img-container img { 
+      width: 175px;
+      height: 175px;
+   }
+
+   .poke-details p:nth-child(1) {
+      font-size: 1.8em;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   #pokemon {
+      padding: 1%;
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   .poke-details p:nth-child(1) {
+      font-size: 2em;
+   }
+
+   .poke-details ul {
+      padding-left: 7%;
+   }
+   
+}
