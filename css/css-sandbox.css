@@ -6,17 +6,26 @@ html, body {
 }
 
 main {
-   font-family: "Nothing You Could Do", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   margin: 0 auto;
+      margin: 0 auto;
    background-color: black;
    padding-bottom: 20%;
    overflow: hidden;
 }
 
+.css-sandbox {
+   margin: 0 auto;
+    width: 75%;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+
+}
+
 .headingText {
-   margin-top: 5%;
+   margin-top: 15%;
    color: lightgreen;
-   font-size: 1.7rem;
+   font-size: 1.3rem;
+   padding-bottom: 4%;
    text-align: center;
 }
 
@@ -59,17 +68,20 @@ main {
 .divP {
    transform: rotate(-45deg);
    position: absolute;
-   top: 20px;
-   left: 25px;
+   top: 55px;
+   left: 7px;
    font-size: 0.9em;
    font-weight: 900;
+   color: white;
+   padding: 2%;
 }
 
 .parentWrapper {
    width: 17em;
-   height: 17em;
+   height: 25em;
    background-color: lightblue;
    margin-top: 5%;
+   margin: 5% auto 0 auto;
    position: relative;
    display: grid;
    box-shadow: 
@@ -109,4 +121,11 @@ main {
    border: 5px solid yellow; 
    background-color: black;
    
+ }
+
+ @media only screen and (min-width: 600px) {
+
+    #canvas {
+       width: 200px;
+    }
  }

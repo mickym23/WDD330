@@ -43,8 +43,27 @@
       flex: 1 1 100%;
     }
 
+    .noteCards {
+       grid-template-columns: 1fr 1fr;
+       row-gap: 25px;
+    }
+
    .chapter {
-      margin:  0% 10% 0% 10%;
+      padding: 2%;
+      margin: 0;
+      font-size: 1.15em
+   }
+
+   .chapter button {
+      font-size: 0.9em;
+   }
+
+   .notesH1 {
+      font-size: 1.1em;
+   }
+
+   .headingText {
+      font-size: 1.5em;
    }
 
    .index-main {
