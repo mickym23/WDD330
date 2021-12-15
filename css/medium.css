@@ -47,9 +47,35 @@
       margin:  0% 10% 0% 10%;
    }
 
+   .index-main {
+      height: 700px;
+   }
+
+   #mainHeader {
+      font-size: 1.3em;
+   }
+
+   .index-h3 {
+      margin-top: 4.5%;
+      font-size: 1.3em;
+   }
+
+   .project {
+      font-size: 1.2em;
+      padding: 7%;
+   }
+
+   .project a{
+      padding: 3%;
+   }
    .taH1 {
       padding-top: 3%;
       font-size: 200%;
+   }
+
+   #footerDiv {
+      font-size: 1.3em;
+      padding: 4%;
    }
 
    .linkButton {

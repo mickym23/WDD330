@@ -4,18 +4,24 @@
       width: 100%;
    }
 
-   header img {
-      max-width: 10%;
-   }
-
-   .homeH1 {
-      padding: 3%;
+   header {
+      padding-top: 2%;
    }
 
    .headings {
       z-index: 1;
       text-align: center;
    }
+
+   .index-main {
+      width: 60%;
+      margin: 0 auto;
+   }
+
+   .index-h3 {
+      margin-top: 0;
+   }
+
 
    .eloquent {
       font-size: 350%;
@@ -42,6 +48,9 @@
    }
 
    #footerDiv {
-      font-size: 150%;
+      width: 50%;
+      margin: 0 auto;
+      padding: 2% 0;
+      font-size: 1.3em;
    }
 }
