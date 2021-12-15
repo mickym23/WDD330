@@ -15,22 +15,38 @@
 </head>
 
 <body class="homeBody">
+   <main class="index-main">
    <div id="mainHeader"></div>
-   <div id='navDiv'></div>
-   <h1 class="eloquent textCenter homeH1">WDD330: Web Frontend Development II</h1>
-   <!-- <img class="homeBanner" src="img/homebanner.jpg" alt="Home Banner, Picture of Galaxy"> -->
 
-   <div class="project">
-      <h2>To-Do List Project</h2>
-      <a href="../WDD330/views/to-do.html">Go to Page</a>
+   <h3 class="index-h3">“You don't have to be great to start, but you have to start to be great.” —Zig Ziglar</h3>
+   <!-- <div id='navDiv'></div> -->
+
+   <div class="projects">
+      <details class="project">
+         <summary>Main Projects</summary>
+            <a class="details-index-a" href="/WDD330/views/to-do.html">To-Do List App</a>
+            <a class="details-index-a" target="_blank" href="https://kifaruadventures.herokuapp.com/">Final Project</a>
+      </details>
+
+      <details class="project">
+         <summary>Challenges</summary>
+         <a href="/WDD330/views/notes.html">JS Console Challenges</a>
+         <a href="/WDD330/PokeDex/index.html">PokeDex</a>
+      </details>
+
+      <details class="project">
+         <summary>Notes</summary>
+         <ul id="indexOL"></ul>
+      </details>
+
+      <details class="project">
+         <summary>Team Activities</summary>
+         <a href="/WDD330/views/t-a.html">Go to Page</a>
+      </details>
+
    </div>
+</main>
 
-   <div class="project">
-      <h2>Mikhail's Pokemon PokeDex</h2>
-      <a href="/WDD330/PokeDex/index.html">Go to PokeDex</a>
-   </div>
-
-   </ol>
    <script src="js/main.js" ></script>
    <script src="snippets/nav.js"></script>
    <script src="snippets/header.js"></script>

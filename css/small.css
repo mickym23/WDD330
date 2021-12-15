@@ -1,45 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Code+Pro:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mali&family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Merienda&display=swap'); */
 
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Manrope&family=Merriweather&display=swap');:root {
    --oceanBlue: #48639c;
 }
 
-*, html, body {
+:root {
+   --rich-black: #020202;
+   --dark-liver-horses: #503B31;
+   --umber: #705d56;
+   --blue-bell: #9097C0;
+   --wild-blue-yonder: #a7bbec;
+}
 
-   margin: 0 auto;
-   width: auto;
+*, html, body {
+   font-family: "Josefin Slab", sans-serif;
+   margin: 0;
+   box-sizing: border-box;
+   padding: 0;
+   width: 100%;
+   background-color: var(--rich-black);
 }
 
 header {
-   background-color: darkslategrey;
-   padding: 2%;
-   padding-bottom: 5%;
-}
-header h1 {
-   text-align: right;
-}
-
-header h2 {
-   text-align: right;
-}
-
-.headings {
-   color: white;
-   font-family: "Monoton", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: var(--blue-bell);
+   padding: 6% 4%;
+   text-align: center;
    letter-spacing: 2.5px;
-   padding-top: 2%;
-   padding-right: 10%;
-}
-header img {
-   float: left;
-   padding-top: 2%;
-   padding-left: 2%;
-   max-width: 100px;
-}   
+   text-transform: uppercase;
+} 
 
 nav {
 	margin: 0 auto;
@@ -48,12 +40,12 @@ nav {
    overflow: hidden;
 }
 
-ul {
+/* ul {
    list-style-type: none;
    padding: 0;
    border: inset 3px white;
 
-}
+} */
 
 .navigation li:first-child {
    display: block;
@@ -80,47 +72,59 @@ nav ul li a, nav ul li a:visited {
    display: block;
  }
 
-.homeBanner {
-   width: 100%;
-}
+ /* INdex Main */
+ .index-main {
+    height: 600px;
+ }
 
-.homeH1 {
-   background-image: url(../img/homebanner.jpg);
-   background-position:center;
-   padding: 5%;
-   color: white;
-   border: 2px double white;
-   border-top: none;
-}
+ .index-h3 {
+    margin-top: 10%;
+    text-align: center;
+    color: var(--blue-bell);
+ }
 
-.homeBody {
-   background-color: var(--oceanBlue);
-}
+ .projects {
+    transform: translateY(100px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+ }
+
+ .project:nth-child(1) {
+    border-right: 2px solid var(--wild-blue-yonder);
+    border-bottom: 2px solid var(--wild-blue-yonder);
+ }
+
+ .project:nth-child(2) {
+    border-bottom: 2px solid var(--wild-blue-yonder);
+ }
+
+ .project:nth-child(3) {
+    border-right: 2px solid var(--wild-blue-yonder);
+ }
 
 .project {
-   background-color: white;
+   color: white;
+   width: 100%;
+   padding: 15%;
    text-align: center;
-   width: 50%;
-   padding: 1%;
    margin-top: 2%;
    font-family: "Tangerine", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   font-size: 150%;
+   font-size: 1.2em;
    border: 4px outset black;
 }
 
-.project h2 {
-   font-size: 160%;
-   font-weight: 700;
+.project summary {
+   color: white;
+   z-index: 9999;
 }
 
 .project a, .project a:visited {
    display: inline-block;
    text-decoration: none;
-   padding: 1%;
-   margin-top: 2%;
-   border: 1px solid black;
-   background-color: #3a3a3a;
-   color: white;
+   padding: 7%;
+   font-size: 1em;
+   font-weight: 700;
+   color: var(--blue-bell);
 }
 
 /* Notes CSS */
@@ -129,14 +133,9 @@ nav ul li a, nav ul li a:visited {
    text-align: center;
 }
 
-.pdfNotes {
-   padding-top: 3%;
-   padding-bottom: 3%;
-   list-style-type: none;
-}
-
-.pdfNotes li {
+#indexOL li {
    padding: 2%;
+   list-style-type: none;
 }
 
 .pdfNotes a, .pdfNotes a:visited {
@@ -239,12 +238,11 @@ nav ul li a, nav ul li a:visited {
 }
 
 #footerDiv {
-      font-size: 130%;
-      font-family: "Playfair Display", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      background: floralwhite;
+      font-size: 1em;
+      font-family: inherit;
       text-align: center;
-      padding: 1%;
-      color: black;
+      padding: 5%;
+      color: white;
       border: 3px white inset;
 }
 
